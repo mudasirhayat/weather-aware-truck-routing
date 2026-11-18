@@ -1,0 +1,21 @@
+# Render blueprint. `render.com` -> New -> Blueprint -> point at this repo.
+services:
+  - type: web
+    name: weather-aware-truck-routing
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "0"
+      # Identify this deployment to the free upstream APIs, as their usage
+      # policies ask. Replace the contact address with your own.
+      - key: OUTBOUND_USER_AGENT
+        value: "weather-aware-truck-routing/1.0 (you@example.com)"
+      - key: WEB_CONCURRENCY
+        value: "2"
+      - key: WEB_THREADS
+        value: "8"
