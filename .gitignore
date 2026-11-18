@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backend/staticfiles/
+*.sqlite3
+
+# Node
+node_modules/
+frontend/dist/
+.vite/
+
+# Env & editors
+.env
+.env.local
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Assessment brief (the company's material, not part of the deliverable)
+fs-assessment-spotter.pdf
